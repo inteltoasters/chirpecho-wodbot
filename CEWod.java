@@ -2,7 +2,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-
 import com.json.parsers.JsonParserFactory;
 import com.json.parsers.JSONParser;
 import java.io.IOException;
@@ -27,8 +26,10 @@ import java.util.TimerTask;
 public class CEWod {
 
 	public static int i = 60 * 60 * 24;
-	
-	public static String TOKEN = "<REPLACE WITH VALID CHIRPECHO USER COOKIE>";
+        
+        public static boolean allow = true;
+        
+        public static String TOKEN = "<REPLACE WITH VALID CHIRPECHO USER COOKIE>";
 
 	public static void doTheShit() {
 		// Get a random word
@@ -134,8 +135,13 @@ public class CEWod {
 			public void run() {
                                 Calendar c = Calendar.getInstance();
                             
-				if (c.get(Calendar.HOUR) == 12 && c.get(Calendar.MINUTE) == 0 && c.get(Calendar.SECOND) == 1) {
+				if (c.get(Calendar.HOUR) == 12 && c.get(Calendar.MINUTE) == 0 && c.get(Calendar.SECOND) == 1 && allow == true) {
                                     doTheShit();
+                                    allow = false;
+                                }
+                                
+                                if (c.get(Calendar.HOUR) == 12 && c.get(Calendar.MINUTE) == 1 && allow == false) {
+                                    allow = true;
                                 }
                                 
                                 System.out.println(c.get(Calendar.HOUR) + " : " + c.get(Calendar.MINUTE) + " : " + c.get(Calendar.SECOND));
