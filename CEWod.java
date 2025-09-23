@@ -140,7 +140,7 @@ public class CEWod {
                                 
                                 System.out.println(c.get(Calendar.HOUR) + " : " + c.get(Calendar.MINUTE) + " : " + c.get(Calendar.SECOND));
 			}
-		}, 0, 1 * 1000);
+		}, 0, 1 * 100);
 	}
 
 }
