@@ -28,7 +28,7 @@ public class CEWod {
 
 	public static int i = 60 * 60 * 24;
 	
-	public static String token = "<REPLACE WITH VALID CHIRPECHO USER COOKIE>";
+	public static String TOKEN = "<REPLACE WITH VALID CHIRPECHO USER COOKIE>";
 
 	public static void doTheShit() {
 		// Get a random word
